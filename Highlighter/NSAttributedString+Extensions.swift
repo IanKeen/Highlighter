@@ -19,7 +19,7 @@ extension NSAttributedString {
 
         } else {
             for i in 1..<ranges.count {
-                highlightString.append(self.containAttribute(originText: originText, bound: ranges[i], attributes: highlightAttributes))
+                highlightString.append(self.containAttribute(originText: originText, bound: ranges[i-1], attributes: highlightAttributes))
                 highlightString.append(self.continueAttribute(originText: originText, upperBound: ranges[i-1].upperBound, lowerBound: ranges[i].lowerBound, normalAttributes: normalAttributes))
             }
 
